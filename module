@@ -11,3 +11,18 @@ class Event(School):
         self.guests = guests
         self.location = location
         self.description = description
+
+         def getevent(self)
+       total value = self. name ,self.date self. manager_self .time, self menu_self decoration_self required_self stock_
+      self participate_self guest_self location_self description{
+        "name":self name
+        "date":self date
+        "manager":self manager
+         "time":self time
+         "menu":self menu
+         "decoration":self decoration
+         "required_stock"_self required_stock
+         "participate":self participate
+         "guest":self guest
+        "location":self location
+        "description":self description
