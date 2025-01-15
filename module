@@ -29,5 +29,68 @@ class stock(School):
             "total_value": total_value,
             "category" : self.category,
             "supplier": self.supplier
-        }
+ }
+
+class Exam:
+    def __init__(self, questions):
+        """
+        Initialize the exam with a list of questions.
+
+        Args:
+            questions (list): A list of tuples containing the question, options, and correct answer.
+        """
+        self.questions = questions
+        self.scores = {}
+
+    def take_exam(self, student_name):
+        """
+        Simulate the exam for a student.
+
+        Args:
+            student_name (str): The name of the student taking the exam.
+        """
+        score = 0
+        for i, (question, options, correct_answer) in enumerate(self.questions):
+            print(f"\nQuestion {i+1}: {question}")
+            for j, option in enumerate(options):
+                print(f"{j+1}. {option}")
+            answer = input("Enter your answer (1-{}): ".format(len(options)))
+            if options[int(answer) - 1] == correct_answer:
+                score += 1
+                print("Correct answer!")
+            else:
+                print(f"Incorrect answer. The correct answer is {correct_answer}.")
+        self.scores[student_name] = score
+        print(f"\nYour score is {score} out of {len(self.questions)}.")
+
+    def display_scores(self):
+        """
+        Display the scores of all students who have taken the exam.
+        """
+        print("\nExam Scores:")
+        for student, score in self.scores.items():
+            print(f"{student}: {score} out of {len(self.questions)}")
+
+
+def main():
+    # Define the exam questions
+    questions = [
+        ("What is the capital of France?", ["Paris", "London", "Berlin", "Rome"], "Paris"),
+        ("What is the largest planet in our solar system?", ["Earth", "Saturn", "Jupiter", "Uranus"], "Jupiter"),
+        ("Who painted the Mona Lisa?", ["Leonardo da Vinci", "Michelangelo", "Raphael", "Caravaggio"], "Leonardo da Vinci"),
+    ]
+
+    # Create an instance of the Exam class
+    exam = Exam(questions)
+
+    # Take the exam
+    student_name = input("Enter your name: ")
+    exam.take_exam(student_name)
+
+    # Display the scores
+    exam.display_scores()
+
+
+if __name__ == "__main__":
+    main()
 
