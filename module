@@ -49,4 +49,4 @@ class Student(School):
         self.student_fees = student_fees
 
     def getStudent(self):
-        return f"id = {self.student_id}, name = {self.student_name}, father name = {self.student_f_name}, phone number = {self.student_phone_number}, address = {self.student_address}, fee = {self.student_fees}"
+        return f"id = {self.student_id} ,name = {self.student_name} ,father name = {self.student_f_name} ,phone number = {self.student_phone_number} ,address = {self.student_address} ,fee = {self.student_fees}"
